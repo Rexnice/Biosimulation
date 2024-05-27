@@ -4,6 +4,37 @@ import './Home.css';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import JournalImage from '../../utils/images/JournalImage.jpeg';
 import FreqAskQuestion from '../../components/FeqAskQuestion/FreqAskQuestion';
+import {Card} from 'react-bootstrap';
+import Image3 from '../../utils/images/Image3.jpg';
+import Image4 from '../../utils/images/Image4.jpg';
+import Image5 from '../../utils/images/Image5.jpg';
+
+
+const blogs = [
+  {
+    id:1,
+    img: [Image3],
+    title: 'Avoiding Plagiarism in Research',
+    description: 'Todays blog post elaborates the importance why scientist \
+    needs to eliminate every form of academic dishonesty'
+  },
+  {
+    id:2,
+    img: [Image4],
+    title: 'Impact Factor in Academic Publishing',
+    description: 'In this blog post, we will talk about the importance\
+    of Impact factors when publishing in journals and how\
+    these impact factors influence research outputs in todays resaerch'
+  },
+  {
+    id:1,
+    img: [Image5],
+    title: 'Predatory Journals and why you should avoid it',
+    description: 'Todays blog post centers on predatory journals\
+    and why as productive scientist we need to step away from it\
+    and embrace the productivity of High Impact factor journals,'
+  }
+]
 
 function Home() {
   return (
@@ -50,6 +81,38 @@ function Home() {
       </div>
       <div className="py-5">
         <FreqAskQuestion />
+      </div>
+      <div className='blog-section text-light py-5'>
+        <div className='container d-flex flex-column align-items-center'>
+          <h2 className='text-center text-capitalize mb-5'>
+            Latest on the blog
+          </h2>
+          <div className='row g-4'>
+            {blogs.map((blog) =>(
+              <div key={blog.id} className='col-md-6 col-lg-4'>
+                <Link to='/blog' className='text-decoration-none'>
+                  <Card className='h-100 shadow scale-hover-effect'>
+                    <Card.Img variant='top' src={blog.img}/>
+                    <Card.Body className='p-md-5'>
+                      <Card.Title>
+                        {blog.title}
+                      </Card.Title>
+                      <Card.Text>
+                        {blog.description}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </div>
+            ))}
+          </div>
+          <Link to='/blog'>
+            <button type='button' className='btn btn-danger btn-lg mt-5'>
+                Read More Blogs
+            </button>            
+          </Link>
+        </div>
+
       </div>
     </div>
   )
