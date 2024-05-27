@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
+import JournalImage from '../../utils/images/JournalImage.jpeg';
+import FreqAskQuestion from '../../components/FeqAskQuestion/FreqAskQuestion';
 
 function Home() {
   return (
@@ -27,6 +29,27 @@ function Home() {
       </header>
       <div className='py-5'>
         <ChooseSection />
+      </div>
+      <div className='py-5 bg-light'>
+        <div className="container">
+          <div className='row d-flex align-items-center justify-content-around'>
+            <div className='col-lg-5'>
+              <h2 className='text-capitalize'>
+                most recent publications
+              </h2>
+              <p>Please find the most recent of our publications for your perusal</p>
+              <Link to='/articles'>
+                <button type='button' className=' btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Read More</button>
+              </Link>
+            </div>
+            <div className='col-lg-5 mt-5 mt-lg-0'>
+              <img src={JournalImage} className='img-fluid' alt='' />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-5">
+        <FreqAskQuestion />
       </div>
     </div>
   )
