@@ -16,7 +16,8 @@ const blogs = [
     img: [Image3],
     title: 'Avoiding Plagiarism in Research',
     description: 'Todays blog post elaborates the importance why scientist \
-    needs to eliminate every form of academic dishonesty'
+    needs to eliminate every form of academic dishonesty',
+    author:'Gber Terkumbur'
   },
   {
     id:2,
@@ -24,7 +25,8 @@ const blogs = [
     title: 'Impact Factor in Academic Publishing',
     description: 'In this blog post, we will talk about the importance\
     of Impact factors when publishing in journals and how\
-    these impact factors influence research outputs in todays resaerch'
+    these impact factors influence research outputs in todays resaerch',
+    author:"Innocent Benjamin"
   },
   {
     id:1,
@@ -32,7 +34,8 @@ const blogs = [
     title: 'Predatory Journals and why you should avoid it',
     description: 'Todays blog post centers on predatory journals\
     and why as productive scientist we need to step away from it\
-    and embrace the productivity of High Impact factor journals,'
+    and embrace the productivity of High Impact factor journals',
+    author:'Chioma Ubah'
   }
 ]
 
@@ -99,6 +102,9 @@ function Home() {
                       </Card.Title>
                       <Card.Text>
                         {blog.description}
+                      </Card.Text>
+                      <Card.Text className='bold lg-4'>
+                        {blog.author}
                       </Card.Text>
                     </Card.Body>
                   </Card>
