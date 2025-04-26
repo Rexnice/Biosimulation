@@ -3,7 +3,7 @@
  function About() {
    return (
      <div>
-       About
+       About page to undergo recent modification
      </div>
    )
  }
